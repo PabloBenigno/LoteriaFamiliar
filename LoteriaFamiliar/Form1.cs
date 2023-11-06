@@ -46,6 +46,7 @@ namespace LoteriaFamiliar
             dataGridNumbers.Invoke((MethodInvoker)delegate
             {
                 dataGridNumbers.Rows[row].Cells[column].Style.BackColor = Color.Yellow;
+                dataGridNumbers.Rows[row].Cells[column].Style.ForeColor = Color.Red;
                 dataGridNumbers.Update();
             });
 
