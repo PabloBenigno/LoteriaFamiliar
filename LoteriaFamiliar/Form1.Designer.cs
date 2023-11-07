@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             dataGridNumbers = new DataGridView();
@@ -92,24 +92,25 @@
             dataGridNumbers.AllowUserToDeleteRows = false;
             dataGridNumbers.AllowUserToResizeColumns = false;
             dataGridNumbers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridNumbers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridNumbers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridNumbers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridNumbers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridNumbers.BackgroundColor = SystemColors.Control;
+            dataGridNumbers.BorderStyle = BorderStyle.None;
             dataGridNumbers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridNumbers.ColumnHeadersVisible = false;
             dataGridNumbers.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.Padding = new Padding(3);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridNumbers.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.Padding = new Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridNumbers.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridNumbers.Dock = DockStyle.Fill;
             dataGridNumbers.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridNumbers.Enabled = false;
@@ -483,8 +484,10 @@
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
+            KeyPreview = true;
             Name = "Form1";
             Text = "Lotería Familiar";
+            WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridNumbers).EndInit();
             panel2.ResumeLayout(false);

@@ -15,7 +15,17 @@ namespace LoteriaFamiliar
         public Form1()
         {
             InitializeComponent();
+            InitializeGrid();
 
+            _worker.DoWork += new DoWorkEventHandler(worker_DoWork);
+            _worker.WorkerSupportsCancellation = true;
+
+            this.KeyDown += Form_KeyDown;
+        }
+
+        private void InitializeGrid()
+        {
+            dataGridNumbers.Rows.Clear();
             dataGridNumbers.Rows.Insert(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
             dataGridNumbers.Rows.Insert(1, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
             dataGridNumbers.Rows.Insert(2, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30);
@@ -25,8 +35,16 @@ namespace LoteriaFamiliar
             dataGridNumbers.Rows.Insert(6, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70);
             dataGridNumbers.Rows.Insert(7, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80);
             dataGridNumbers.Rows.Insert(8, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+        }
 
-            _worker.DoWork += new DoWorkEventHandler(worker_DoWork);
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                _playing = !_playing;
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
 
 
@@ -36,6 +54,9 @@ namespace LoteriaFamiliar
             _playing = true;
 
             _worker.RunWorkerAsync();
+
+            btnStart.Enabled = false;
+            btnStart.Text = "Jugando...";
         }
 
         private void SetGridCellSelected(int number)
@@ -95,6 +116,11 @@ namespace LoteriaFamiliar
                     Player.PlaySync();
                 }
 
+                if (_worker.CancellationPending)
+                {
+                    e.Cancel = true;
+                    return;
+                }
             }
         }
 
@@ -134,9 +160,27 @@ namespace LoteriaFamiliar
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            btnReset.Enabled = false;
+
             _playing = false;
-            Thread.Sleep(1000);
             _numbers = Enumerable.Range(1, 90).ToList();
+
+            _worker.CancelAsync();
+
+            Thread.Sleep(1000);
+
+            InitializeGrid();
+
+            btnStart.Enabled = true;
+            btnStart.Text = "Comenzar";
+            lblCurrentNumber.Text = "";
+            lblLast1.Text = "";
+            lblLast2.Text = "";
+            lblLast3.Text = "";
+            lblLast4.Text = "";
+            lblLast5.Text = "";
+
+            btnReset.Enabled = true;
         }
     }
 }
