@@ -44,6 +44,7 @@
             Column9 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
+            btnContinue = new Button();
             label2 = new Label();
             numericWait = new NumericUpDown();
             label1 = new Label();
@@ -219,6 +220,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.Control;
+            panel2.Controls.Add(btnContinue);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(numericWait);
             panel2.Controls.Add(label1);
@@ -229,6 +231,19 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1657, 95);
             panel2.TabIndex = 1;
+            // 
+            // btnContinue
+            // 
+            btnContinue.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnContinue.Location = new Point(455, 20);
+            btnContinue.Margin = new Padding(3, 4, 3, 4);
+            btnContinue.Name = "btnContinue";
+            btnContinue.Size = new Size(117, 36);
+            btnContinue.TabIndex = 6;
+            btnContinue.Text = "Continuar";
+            btnContinue.UseVisualStyleBackColor = true;
+            btnContinue.Visible = false;
+            btnContinue.Click += btnContinue_Click;
             // 
             // label2
             // 
@@ -507,6 +522,7 @@
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
@@ -564,5 +580,6 @@
         private PictureBox pictureBox1;
         private Label lblCurrentNumber;
         private Panel panel5;
+        private Button btnContinue;
     }
 }

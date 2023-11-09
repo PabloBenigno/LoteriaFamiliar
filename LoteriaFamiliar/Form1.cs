@@ -10,6 +10,7 @@ namespace LoteriaFamiliar
         private bool _playing = false;
 
         SoundPlayer Player = new SoundPlayer();
+        Form2 f;
 
         public Form1()
         {
@@ -45,9 +46,20 @@ namespace LoteriaFamiliar
                 e.SuppressKeyPress = true;
             }
 
+            f = new Form2();
 
-            if (dataGridNumbers.CurrentCell != null)
-                dataGridNumbers.CurrentCell.Selected = false;
+            // Copy styles
+            for (int i = 0; i < f.dataGridNumbers.Rows.Count; i++)
+            {
+                for (int j = 0; j < f.dataGridNumbers.Columns.Count; j++)
+                {
+                    f.dataGridNumbers.Rows[i].Cells[j].Style.BackColor = dataGridNumbers.Rows[i].Cells[j].Style.BackColor;
+                    f.dataGridNumbers.Rows[i].Cells[j].Style.ForeColor = dataGridNumbers.Rows[i].Cells[j].Style.ForeColor;
+                }
+            }
+
+            f.Show();
+            btnContinue.Visible = true;
         }
 
 
@@ -56,7 +68,7 @@ namespace LoteriaFamiliar
             if (dataGridNumbers.CurrentCell != null)
                 dataGridNumbers.CurrentCell.Selected = false;
 
-            _numbers = Enumerable.Range(1, 10).ToList();
+            _numbers = Enumerable.Range(1, 90).ToList();
             _playing = true;
 
             _worker.RunWorkerAsync();
@@ -161,6 +173,9 @@ namespace LoteriaFamiliar
         private void btnReset_Click(object sender, EventArgs e)
         {
             btnReset.Enabled = false;
+            btnContinue.Visible = false;
+
+            f?.Close();
 
             _playing = false;
             _numbers = Enumerable.Range(1, 90).ToList();
@@ -183,6 +198,12 @@ namespace LoteriaFamiliar
             lblBallsOut.Text = (90 - _numbers.Count).ToString();
 
             btnReset.Enabled = true;
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            _playing = true;
+            btnContinue.Visible = false;
         }
     }
 }
