@@ -235,7 +235,7 @@
             // btnContinue
             // 
             btnContinue.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnContinue.Location = new Point(455, 20);
+            btnContinue.Location = new Point(19, 24);
             btnContinue.Margin = new Padding(3, 4, 3, 4);
             btnContinue.Name = "btnContinue";
             btnContinue.Size = new Size(117, 36);

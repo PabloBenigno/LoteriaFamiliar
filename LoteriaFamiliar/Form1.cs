@@ -39,9 +39,12 @@ namespace LoteriaFamiliar
 
         private void Form_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!_playing)
+                return;
+
             if (e.KeyCode == Keys.Space)
             {
-                _playing = !_playing;
+                _playing = false;
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
@@ -60,6 +63,7 @@ namespace LoteriaFamiliar
 
             f.Show();
             btnContinue.Visible = true;
+            btnContinue.Select();
         }
 
 
@@ -198,12 +202,15 @@ namespace LoteriaFamiliar
             lblBallsOut.Text = (90 - _numbers.Count).ToString();
 
             btnReset.Enabled = true;
+            btnStart.Select();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
             _playing = true;
             btnContinue.Visible = false;
+
+            f?.Close();
         }
     }
 }
