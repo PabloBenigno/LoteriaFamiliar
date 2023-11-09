@@ -20,7 +20,7 @@ namespace LoteriaFamiliar
             _worker.DoWork += new DoWorkEventHandler(worker_DoWork);
             _worker.WorkerSupportsCancellation = true;
 
-            this.KeyDown += Form_KeyDown;
+            KeyDown += Form_KeyDown;
         }
 
         private void InitializeGrid()
@@ -45,12 +45,19 @@ namespace LoteriaFamiliar
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
+
+
+            if (dataGridNumbers.CurrentCell != null)
+                dataGridNumbers.CurrentCell.Selected = false;
         }
 
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            _numbers = Enumerable.Range(1, 90).ToList();
+            if (dataGridNumbers.CurrentCell != null)
+                dataGridNumbers.CurrentCell.Selected = false;
+
+            _numbers = Enumerable.Range(1, 10).ToList();
             _playing = true;
 
             _worker.RunWorkerAsync();
@@ -90,12 +97,6 @@ namespace LoteriaFamiliar
                     UpdateLabels(index);
 
                     SetGridCellSelected(_numbers[index]);
-
-                    WindowsMediaPlayer wplayer = new()
-                    {
-                        URL = "Sounds\\ball.mp3"
-                    };
-                    wplayer.controls.play();
 
                     Player.SoundLocation = $"Sounds\\{_numbers[index]}.wav";
 
@@ -179,6 +180,8 @@ namespace LoteriaFamiliar
             lblLast3.Text = "";
             lblLast4.Text = "";
             lblLast5.Text = "";
+            lblBallsIn.Text = _numbers.Count.ToString();
+            lblBallsOut.Text = (90 - _numbers.Count).ToString();
 
             btnReset.Enabled = true;
         }

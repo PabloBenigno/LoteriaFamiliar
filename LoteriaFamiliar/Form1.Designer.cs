@@ -81,9 +81,10 @@
             // 
             panel1.Controls.Add(dataGridNumbers);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 71);
+            panel1.Location = new Point(0, 95);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1012, 613);
+            panel1.Size = new Size(1156, 817);
             panel1.TabIndex = 0;
             // 
             // dataGridNumbers
@@ -115,10 +116,12 @@
             dataGridNumbers.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridNumbers.Enabled = false;
             dataGridNumbers.Location = new Point(0, 0);
+            dataGridNumbers.Margin = new Padding(3, 4, 3, 4);
             dataGridNumbers.MultiSelect = false;
             dataGridNumbers.Name = "dataGridNumbers";
             dataGridNumbers.ReadOnly = true;
             dataGridNumbers.RowHeadersVisible = false;
+            dataGridNumbers.RowHeadersWidth = 51;
             dataGridNumbers.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridNumbers.RowTemplate.DefaultCellStyle.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridNumbers.RowTemplate.DefaultCellStyle.ForeColor = Color.Silver;
@@ -129,7 +132,7 @@
             dataGridNumbers.RowTemplate.ReadOnly = true;
             dataGridNumbers.RowTemplate.Resizable = DataGridViewTriState.False;
             dataGridNumbers.ScrollBars = ScrollBars.None;
-            dataGridNumbers.Size = new Size(1012, 613);
+            dataGridNumbers.Size = new Size(1156, 817);
             dataGridNumbers.TabIndex = 0;
             dataGridNumbers.TabStop = false;
             // 
@@ -137,6 +140,7 @@
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column1.HeaderText = "Column1";
+            Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
@@ -144,6 +148,7 @@
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column2.HeaderText = "Column2";
+            Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
             // 
@@ -151,6 +156,7 @@
             // 
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column3.HeaderText = "Column3";
+            Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
@@ -158,6 +164,7 @@
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column4.HeaderText = "Column4";
+            Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
@@ -165,6 +172,7 @@
             // 
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column5.HeaderText = "Column5";
+            Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
@@ -172,6 +180,7 @@
             // 
             Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column6.HeaderText = "Column6";
+            Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
             // 
@@ -179,6 +188,7 @@
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column7.HeaderText = "Column7";
+            Column7.MinimumWidth = 6;
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
@@ -186,6 +196,7 @@
             // 
             Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column8.HeaderText = "Column8";
+            Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
             // 
@@ -193,6 +204,7 @@
             // 
             Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column9.HeaderText = "Column9";
+            Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
             // 
@@ -200,6 +212,7 @@
             // 
             Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column10.HeaderText = "Column10";
+            Column10.MinimumWidth = 6;
             Column10.Name = "Column10";
             Column10.ReadOnly = true;
             // 
@@ -212,27 +225,29 @@
             panel2.Controls.Add(btnStart);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1450, 71);
+            panel2.Size = new Size(1657, 95);
             panel2.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(295, 20);
+            label2.Location = new Point(337, 27);
             label2.Name = "label2";
-            label2.Size = new Size(86, 19);
+            label2.Size = new Size(103, 24);
             label2.TabIndex = 5;
             label2.Text = "segundos";
             // 
             // numericWait
             // 
             numericWait.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            numericWait.Location = new Point(253, 18);
+            numericWait.Location = new Point(289, 24);
+            numericWait.Margin = new Padding(3, 4, 3, 4);
             numericWait.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericWait.Name = "numericWait";
-            numericWait.Size = new Size(36, 26);
+            numericWait.Size = new Size(41, 30);
             numericWait.TabIndex = 4;
             numericWait.Value = new decimal(new int[] { 2, 0, 0, 0 });
             // 
@@ -240,18 +255,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(178, 20);
+            label1.Location = new Point(203, 27);
             label1.Name = "label1";
-            label1.Size = new Size(69, 19);
+            label1.Size = new Size(84, 24);
             label1.TabIndex = 1;
             label1.Text = "Esperar";
             // 
             // btnStart
             // 
             btnStart.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnStart.Location = new Point(17, 16);
+            btnStart.Location = new Point(19, 21);
+            btnStart.Margin = new Padding(3, 4, 3, 4);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(102, 27);
+            btnStart.Size = new Size(117, 36);
             btnStart.TabIndex = 0;
             btnStart.Text = "Comenzar";
             btnStart.UseVisualStyleBackColor = true;
@@ -271,18 +287,20 @@
             panel3.Controls.Add(lblBallsOut);
             panel3.Controls.Add(label3);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(1012, 71);
+            panel3.Location = new Point(1156, 95);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(438, 710);
+            panel3.Size = new Size(501, 946);
             panel3.TabIndex = 2;
             // 
             // panel5
             // 
             panel5.BackColor = Color.Blue;
             panel5.Controls.Add(lblCurrentNumber);
-            panel5.Location = new Point(131, 231);
+            panel5.Location = new Point(150, 308);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(277, 246);
+            panel5.Size = new Size(317, 328);
             panel5.TabIndex = 18;
             // 
             // lblCurrentNumber
@@ -291,9 +309,9 @@
             lblCurrentNumber.BorderStyle = BorderStyle.FixedSingle;
             lblCurrentNumber.Font = new Font("Arial", 72F, FontStyle.Bold, GraphicsUnit.Point);
             lblCurrentNumber.ForeColor = Color.Red;
-            lblCurrentNumber.Location = new Point(15, 18);
+            lblCurrentNumber.Location = new Point(17, 24);
             lblCurrentNumber.Name = "lblCurrentNumber";
-            lblCurrentNumber.Size = new Size(243, 212);
+            lblCurrentNumber.Size = new Size(277, 282);
             lblCurrentNumber.TabIndex = 17;
             lblCurrentNumber.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -302,7 +320,8 @@
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.ImageLocation = "logo.png";
-            pictureBox1.Location = new Point(235, 33);
+            pictureBox1.Location = new Point(269, 44);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(18, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -312,19 +331,22 @@
             // btnExit
             // 
             btnExit.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnExit.Location = new Point(27, 280);
+            btnExit.Location = new Point(31, 373);
+            btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(90, 27);
+            btnExit.Size = new Size(103, 36);
             btnExit.TabIndex = 13;
             btnExit.Text = "Salir";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Visible = false;
             // 
             // btnReset
             // 
             btnReset.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnReset.Location = new Point(27, 247);
+            btnReset.Location = new Point(31, 329);
+            btnReset.Margin = new Padding(3, 4, 3, 4);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(90, 27);
+            btnReset.Size = new Size(103, 36);
             btnReset.TabIndex = 12;
             btnReset.Text = "Reiniciar";
             btnReset.UseVisualStyleBackColor = true;
@@ -334,9 +356,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(164, 78);
+            label8.Location = new Point(187, 104);
             label8.Name = "label8";
-            label8.Size = new Size(51, 19);
+            label8.Size = new Size(61, 24);
             label8.TabIndex = 11;
             label8.Text = "bolas";
             // 
@@ -344,9 +366,9 @@
             // 
             lblBallsIn.AutoSize = true;
             lblBallsIn.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBallsIn.Location = new Point(131, 78);
+            lblBallsIn.Location = new Point(150, 104);
             lblBallsIn.Name = "lblBallsIn";
-            lblBallsIn.Size = new Size(27, 19);
+            lblBallsIn.Size = new Size(32, 24);
             lblBallsIn.TabIndex = 10;
             lblBallsIn.Text = "90";
             // 
@@ -354,9 +376,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(27, 78);
+            label6.Location = new Point(31, 104);
             label6.Name = "label6";
-            label6.Size = new Size(69, 19);
+            label6.Size = new Size(84, 24);
             label6.TabIndex = 9;
             label6.Text = "Quedan";
             // 
@@ -364,9 +386,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(164, 33);
+            label5.Location = new Point(187, 44);
             label5.Name = "label5";
-            label5.Size = new Size(51, 19);
+            label5.Size = new Size(61, 24);
             label5.TabIndex = 8;
             label5.Text = "bolas";
             // 
@@ -374,9 +396,9 @@
             // 
             lblBallsOut.AutoSize = true;
             lblBallsOut.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBallsOut.Location = new Point(140, 33);
+            lblBallsOut.Location = new Point(160, 44);
             lblBallsOut.Name = "lblBallsOut";
-            lblBallsOut.Size = new Size(18, 19);
+            lblBallsOut.Size = new Size(21, 24);
             lblBallsOut.TabIndex = 7;
             lblBallsOut.Text = "0";
             // 
@@ -384,9 +406,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(27, 33);
+            label3.Location = new Point(31, 44);
             label3.Name = "label3";
-            label3.Size = new Size(90, 19);
+            label3.Size = new Size(109, 24);
             label3.TabIndex = 6;
             label3.Text = "Han salido";
             // 
@@ -400,9 +422,10 @@
             panel4.Controls.Add(lblLast1);
             panel4.Controls.Add(label9);
             panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 684);
+            panel4.Location = new Point(0, 912);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1012, 97);
+            panel4.Size = new Size(1156, 129);
             panel4.TabIndex = 3;
             // 
             // lblLast5
@@ -411,9 +434,9 @@
             lblLast5.BorderStyle = BorderStyle.FixedSingle;
             lblLast5.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
             lblLast5.ForeColor = Color.Red;
-            lblLast5.Location = new Point(511, 21);
+            lblLast5.Location = new Point(721, 28);
             lblLast5.Name = "lblLast5";
-            lblLast5.Size = new Size(80, 60);
+            lblLast5.Size = new Size(126, 79);
             lblLast5.TabIndex = 15;
             lblLast5.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -423,9 +446,9 @@
             lblLast4.BorderStyle = BorderStyle.FixedSingle;
             lblLast4.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
             lblLast4.ForeColor = Color.Red;
-            lblLast4.Location = new Point(425, 21);
+            lblLast4.Location = new Point(588, 28);
             lblLast4.Name = "lblLast4";
-            lblLast4.Size = new Size(80, 60);
+            lblLast4.Size = new Size(127, 79);
             lblLast4.TabIndex = 14;
             lblLast4.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -435,9 +458,9 @@
             lblLast3.BorderStyle = BorderStyle.FixedSingle;
             lblLast3.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
             lblLast3.ForeColor = Color.Red;
-            lblLast3.Location = new Point(339, 21);
+            lblLast3.Location = new Point(455, 28);
             lblLast3.Name = "lblLast3";
-            lblLast3.Size = new Size(80, 60);
+            lblLast3.Size = new Size(127, 79);
             lblLast3.TabIndex = 13;
             lblLast3.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -447,9 +470,9 @@
             lblLast2.BorderStyle = BorderStyle.FixedSingle;
             lblLast2.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
             lblLast2.ForeColor = Color.Red;
-            lblLast2.Location = new Point(253, 21);
+            lblLast2.Location = new Point(323, 28);
             lblLast2.Name = "lblLast2";
-            lblLast2.Size = new Size(80, 60);
+            lblLast2.Size = new Size(126, 79);
             lblLast2.TabIndex = 12;
             lblLast2.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -459,9 +482,9 @@
             lblLast1.BorderStyle = BorderStyle.FixedSingle;
             lblLast1.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point);
             lblLast1.ForeColor = Color.Red;
-            lblLast1.Location = new Point(167, 21);
+            lblLast1.Location = new Point(191, 28);
             lblLast1.Name = "lblLast1";
-            lblLast1.Size = new Size(80, 60);
+            lblLast1.Size = new Size(126, 79);
             lblLast1.TabIndex = 11;
             lblLast1.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -469,22 +492,23 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(12, 43);
+            label9.Location = new Point(14, 57);
             label9.Name = "label9";
-            label9.Size = new Size(145, 19);
+            label9.Size = new Size(177, 24);
             label9.TabIndex = 10;
             label9.Text = "Últimos números:";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1450, 781);
+            ClientSize = new Size(1657, 1041);
             Controls.Add(panel1);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Lotería Familiar";
             WindowState = FormWindowState.Maximized;
